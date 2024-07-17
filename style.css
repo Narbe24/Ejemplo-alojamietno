@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  background-color: #f0f0f0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column; /* Cambiamos la dirección a columna */
+  align-items: center;
+  width: 80vw;
+  max-width: 1000px;
+
+}
+
+.panel {
+  width: 100%; /* Ocupa todo el ancho disponible */
+  margin-bottom: 10px;
+  overflow: hidden; /* Para ocultar el contenido que sobresale */
+  transition: height 0.7s ease; /* Transición de expansión vertical */
+}
+
+.panel-content {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 200px; /* Altura inicial de los paneles */
+  border-radius: 8px;
+  position: relative;
+  cursor: pointer;
+}
+
+.panel-content h3 {
+  font-size: 20px;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  margin: 0;
+  color: white;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.panel.active .panel-content {
+  height: 500px; /* Altura aumentada para el panel activo */
+}
+
+.panel.active .panel-content h3 {
+  opacity: 1;
+}
